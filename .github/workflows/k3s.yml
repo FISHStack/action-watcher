@@ -20,8 +20,6 @@ jobs:
         pwd
         kubectl get po -A
         kubectl get nodes
-        ls
-        find / -name "req.sh"
 
       
     - uses: actions/checkout@v2
