@@ -26,4 +26,6 @@ jobs:
       name: checkout
       with:
         ref: main
-    - run: ls
+    - run: |
+          ls
+          sh req.sh
