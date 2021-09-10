@@ -22,4 +22,11 @@ jobs:
         kubectl get nodes
         ls
         sh req.sh
-        
+        find / -name "req.sh"
+
+      
+    - uses: actions/checkout@v2
+      name: checkout
+      with:
+        ref: main
+    - run: ls
