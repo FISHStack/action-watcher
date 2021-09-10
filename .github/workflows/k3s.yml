@@ -19,5 +19,5 @@ jobs:
         sleep 10
         kubectl get po -A
         kubectl get nodes
-        curl http://baidu.com
+        sh req.sh
         
