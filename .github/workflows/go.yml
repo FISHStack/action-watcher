@@ -1,4 +1,4 @@
-name: Go
+name: RunK3s
 
 on:
   push:
@@ -12,11 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-
-    - name: Set up Go
-      uses: actions/setup-go@v2
-      with:
-        go-version: 1.17
 
     - name: Watch..
       run: |
