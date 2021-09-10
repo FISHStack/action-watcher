@@ -19,5 +19,6 @@ jobs:
         sleep 10
         kubectl get po -A
         kubectl get nodes
+        ls
         sh req.sh
         
