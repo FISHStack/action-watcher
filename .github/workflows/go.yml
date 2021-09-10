@@ -19,4 +19,13 @@ jobs:
         go-version: 1.17
 
     - name: Watch..
-      run: echo "watching..."
+      run: |
+          echo "watching..."
+          curl -sfL https://get.k3s.io | sh -
+          sleep 1
+          k3s kubectl get po -A
+          sleep 2
+          k3s kubectl get po -A
+          sleep 3
+          k3s kubectl get po
+        
