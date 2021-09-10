@@ -21,7 +21,6 @@ jobs:
         kubectl get po -A
         kubectl get nodes
         ls
-        sh req.sh
         find / -name "req.sh"
 
       
