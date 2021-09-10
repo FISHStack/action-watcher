@@ -1,0 +1,23 @@
+name: RunK3s
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: debianmaster/actions-k3s@master # 使用k3s提供的k8s环境
+      id: k3s
+      with:
+        version: 'v1.18.2-k3s1'
+    - run: |
+        kubectl get nodes
+        kubectl config view --raw
+        sleep 3
+        kubectl get po -A
+        
