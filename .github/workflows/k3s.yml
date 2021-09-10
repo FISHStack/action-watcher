@@ -16,9 +16,10 @@ jobs:
       with:
         version: 'v1.18.2-k3s1'
     - run: |
+        sleep 30
         kubectl get nodes
         kubectl config view --raw
-        sleep 30
+        
         kubectl get po -A
         kubectl get nodes
         
