@@ -16,10 +16,8 @@ jobs:
       with:
         version: 'latest'
     - run: |
-        sleep 30
-        kubectl get nodes
-        kubectl config view --raw
-        
+        sleep 10
         kubectl get po -A
         kubectl get nodes
+        curl http://baidu.com
         
