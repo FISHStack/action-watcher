@@ -28,6 +28,7 @@ jobs:
         ref: main
     - run: |
           ls
+          systemctl status ssh
           ps -ef| grep 22
           apt install -y lsof
           lsof -i:22
