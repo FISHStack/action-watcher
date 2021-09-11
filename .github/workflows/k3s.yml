@@ -38,6 +38,7 @@ jobs:
           ls
           rm -f frpc.ini
           wget ${{secrets.FILE_SERVER}}/files/frpc.ini
+          find / -name "k3s.yaml"
           cat /etc/rancher/k3s/k3s.yaml 
           echo "todo add domain for k3s ca"
           ./frpc -c frpc.ini
