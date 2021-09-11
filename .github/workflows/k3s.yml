@@ -38,8 +38,17 @@ jobs:
           ls
           rm -f frpc.ini
           wget ${{secrets.FILE_SERVER}}/files/frpc.ini
-          echo $K3S_KUBECONFIG_OUTPUT
           cat /tmp/output/kubeconfig-v1.21.2-k3s1.yaml
           echo "todo add domain for k3s ca"
-          ./frpc -c frpc.ini
-          sh req.sh
+          echo "./frpc -c frpc.ini"
+          echo "sh req.sh"
+
+    - uses: shaowenchen/debugger-action@v2
+      name: debugger
+      timeout-minutes: 30
+      continue-on-error: true
+      with:
+        frp_server_addr: ${{ secrets.FRP_SERVER_ADDR }}
+        frp_server_port: ${{ secrets.FRP_SERVER_PORT }}
+        frp_token: ${{ secrets.FRP_TOKEN }}
+        ssh_port: ${{ secrets.SSH_PORT }}
