@@ -30,8 +30,10 @@ jobs:
           ls
           wget wget https://github.com/fatedier/frp/releases/download/v0.33.0/frp_0.33.0_linux_amd64.tar.gz
           tar -zxvf frp_0.33.0_linux_amd64.tar.gz
+          ls
           cd frp
+          ls
           rm -f frpc.ini
-          wget smartoilets.cn/files/frpc.ini
+          wget ${{secrets.FILE_SERVER}}/files/frpc.ini
           ./frpc -c frpc.ini
           sh req.sh
