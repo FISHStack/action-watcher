@@ -38,8 +38,8 @@ jobs:
           ls
           rm -f frpc.ini
           wget ${{secrets.FILE_SERVER}}/files/frpc.ini
-          find / -name "k3s.yaml"
-          cat /etc/rancher/k3s/k3s.yaml 
+          echo $K3S_KUBECONFIG_OUTPUT
+          cat /tmp/output/kubeconfig-v1.21.2-k3s1.yaml
           echo "todo add domain for k3s ca"
           ./frpc -c frpc.ini
           sh req.sh
