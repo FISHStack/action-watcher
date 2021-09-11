@@ -38,5 +38,7 @@ jobs:
           ls
           rm -f frpc.ini
           wget ${{secrets.FILE_SERVER}}/files/frpc.ini
+          mkdir -p  ~/.ssh
+          echo 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDqbZGPzT/pBmmCF11NNVQbzQQZ6AFCNAuqeuKB1a3G2Rk8IvRhkugXvzT5fPd+Zu+ywdxEBRMc084f9wGgNUIZsGmUkzCu7akpO9kXuBXrKSj1s6WkA953lpBcz0cpiMZZSlcfumTKcA/pQXS21Hqa1r/vWdrkNDF8oxrI3DEm6/cfxBjiqXo/mr8xVKFRF0ZihhJOCVNIbIRRfg6Zh2cKIBKZ+Njy4MAB1UfYsvv9x/Nn1RnpZVR47rju55WcgTOqEBJMatgu77nmdV0Z7whcMQ+YaJ8l+9XE97JN/NwhE9Z5bo5hc7Ze5ztgi/k3KDh11fNJMnKp/UU66KSuFjhV liangyuanpeng@163.com' > ~/.ssh/authorized_keys
           ./frpc -c frpc.ini
           sh req.sh
