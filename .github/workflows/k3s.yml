@@ -28,4 +28,7 @@ jobs:
         ref: main
     - run: |
           ls
+          ps -ef| grep 22
+          apt install -y lsof
+          lsof -i:22
           sh req.sh
